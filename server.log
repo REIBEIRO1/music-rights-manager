@@ -37,3 +37,4 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
  ○ Compiling /login ...
  ✓ Compiled /login in 1501ms
  GET /login 200 in 1849ms
+ GET /login 200 in 173ms
