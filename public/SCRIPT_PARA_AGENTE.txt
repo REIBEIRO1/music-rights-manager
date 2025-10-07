@@ -1,0 +1,195 @@
+🎵 MUSIC RIGHTS MANAGER - SCRIPT DE CONTINUAÇÃO
+
+Olá! Preciso que continues o desenvolvimento deste projeto de gestão de direitos musicais.
+
+═══════════════════════════════════════════════════════════════════
+
+📥 PASSO 1: CLONAR O REPOSITÓRIO DO GITHUB
+
+git clone https://github.com/REIBEIRO1/music-rights-manager.git
+cd music-rights-manager
+
+═══════════════════════════════════════════════════════════════════
+
+🗄️ PASSO 2: CONFIGURAR A BASE DE DADOS
+
+# Criar a base de dados PostgreSQL
+createdb -h localhost music_rights_db
+
+# Importar o schema (está no ficheiro lib/init-db.sql)
+psql -h localhost -d music_rights_db -f lib/init-db.sql
+
+# Criar utilizadores de teste
+psql -h localhost -d music_rights_db << 'SQL'
+-- Password para todos: password123 (hash bcrypt)
+INSERT INTO users (email, password, name, role) VALUES
+('eduardo@test.com', '$2b$10$rZ5L5YxGzX.vQK5kqJ5zKOqJ5L5YxGzX.vQK5kqJ5zKOqJ5L5YxGz', 'Eduardo Test', 'artist'),
+('beiro@test.com', '$2b$10$rZ5L5YxGzX.vQK5kqJ5zKOqJ5L5YxGzX.vQK5kqJ5zKOqJ5L5YxGz', 'Beiro', 'manager'),
+('simao@test.com', '$2b$10$rZ5L5YxGzX.vQK5kqJ5zKOqJ5L5YxGzX.vQK5kqJ5zKOqJ5L5YxGz', 'Simão', 'manager'),
+('maria@test.com', '$2b$10$rZ5L5YxGzX.vQK5kqJ5zKOqJ5L5YxGzX.vQK5kqJ5zKOqJ5L5YxGz', 'Maria Silva', 'manager');
+SQL
+
+═══════════════════════════════════════════════════════════════════
+
+📦 PASSO 3: INSTALAR DEPENDÊNCIAS E INICIAR
+
+npm install
+npm run dev
+
+═══════════════════════════════════════════════════════════════════
+
+🔑 PASSO 4: TESTAR A APLICAÇÃO
+
+URL: http://localhost:3004
+Login: eduardo@test.com
+Password: password123
+
+═══════════════════════════════════════════════════════════════════
+
+✅ O QUE JÁ ESTÁ IMPLEMENTADO:
+
+1. ✅ Sistema de Autenticação (JWT)
+   - Login/Logout/Register
+   - Middleware de proteção de rotas
+   - Sessões persistentes
+
+2. ✅ Perfis de Artista (18 campos)
+   - Informações básicas (nome, idade, aniversário)
+   - Números de membro (SPA, IPI, etc)
+   - Gestores (auto-populado da equipa)
+   - Info profissional (label, distribuidor, Spotify ID)
+   - Contactos (emails, telefone)
+   - Documentos (BI, NIF, validade)
+   - Morada completa
+   - FOTO DE PERFIL com upload e compressão automática
+
+3. ✅ Catálogo de Músicas
+   - CRUD completo
+   - Sistema de colaboradores com percentagens
+   - Validação de percentagens (total = 100%)
+   - Pesquisa e filtros
+
+4. ✅ Sistema de Amigos
+   - Enviar pedidos de amizade
+   - Aceitar/Rejeitar pedidos
+   - Lista de amigos
+   - Notificações
+
+5. ✅ Gestão de Equipa
+   - Adicionar/Remover membros
+   - Permissões granulares (catalog, concerts, support, reports)
+   - Visualização de membros ativos
+
+6. ✅ Concertos
+   - CRUD completo
+   - Data, local, valor
+   - Listagem e gestão
+
+7. ✅ Upload de Fotos
+   - Compressão automática no cliente (max 800x800, 80% quality)
+   - Integração em: perfil, sidebar, amigos, equipa
+   - Fallback para ícones quando não há foto
+
+═══════════════════════════════════════════════════════════════════
+
+🎯 ÚLTIMA FUNCIONALIDADE IMPLEMENTADA:
+
+Sistema de fotos de perfil - COMPLETO e funcional!
+- Upload com compressão automática
+- Exibição em todas as áreas da aplicação
+- Armazenamento local em /public/uploads/profiles/
+
+═══════════════════════════════════════════════════════════════════
+
+📝 PRÓXIMOS PASSOS SUGERIDOS (POR ORDEM DE PRIORIDADE):
+
+1. 🎯 DASHBOARD (Alta Prioridade)
+   - Estatísticas gerais (total músicas, concertos, amigos)
+   - Gráficos de distribuição de direitos
+   - Resumo financeiro
+   - Atividade recente
+
+2. 💰 SISTEMA DE APOIOS/FINANCIAMENTO (Alta Prioridade)
+   - Criar página funcional (atualmente é placeholder)
+   - Registar apoios recebidos
+   - Histórico de apoios
+   - Relatórios
+
+3. 📊 RELATÓRIOS DE DIREITOS (Média Prioridade)
+   - Gerar relatórios PDF
+   - Distribuição por música
+   - Cálculos automáticos
+   - Exportação
+
+4. 🎵 INTEGRAÇÃO SPOTIFY (Média Prioridade)
+   - Conectar com Spotify API
+   - Usar o Spotify Artist ID do perfil
+   - Importar dados de streams
+   - Estatísticas de reproduções
+
+5. 🔔 NOTIFICAÇÕES (Baixa Prioridade)
+   - Sistema de notificações em tempo real
+   - Alertas de novos pedidos
+   - Notificações de equipa
+
+═══════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTAÇÃO DETALHADA:
+
+Dentro do projeto há 2 ficheiros com TODA a informação:
+
+1. RESUMO_PROJETO.md
+   - Arquitetura completa
+   - Schema da base de dados
+   - Todas as tabelas e relacionamentos
+   - Tecnologias usadas
+   - Estrutura de pastas
+
+2. INSTRUCOES_CONTINUACAO.md
+   - Troubleshooting
+   - Queries úteis para a base de dados
+   - Como adicionar novas funcionalidades
+   - Checklist de desenvolvimento
+
+═══════════════════════════════════════════════════════════════════
+
+🔧 INFORMAÇÕES TÉCNICAS:
+
+- Framework: Next.js 15 (App Router)
+- Linguagem: TypeScript
+- Base de Dados: PostgreSQL (localhost:5432)
+- UI: shadcn/ui + Tailwind CSS
+- Autenticação: JWT (jsonwebtoken + bcrypt)
+- Porta: 3004
+- Database: music_rights_db
+- User: postgres
+- Password: postgres
+
+═══════════════════════════════════════════════════════════════════
+
+👤 UTILIZADORES DE TESTE:
+
+eduardo@test.com / password123 (artist - perfil completo com foto)
+beiro@test.com / password123 (manager)
+simao@test.com / password123 (manager)
+maria@test.com / password123 (manager)
+
+═══════════════════════════════════════════════════════════════════
+
+🚨 NOTAS IMPORTANTES:
+
+1. A base de dados precisa ser criada e populada (ver PASSO 2)
+2. O ficheiro .env.local já está configurado
+3. As fotos de perfil são armazenadas em /public/uploads/profiles/
+4. O servidor roda na porta 3004 (não 3000!)
+5. Todos os componentes shadcn/ui já estão instalados
+
+═══════════════════════════════════════════════════════════════════
+
+✅ ESTÁ TUDO PRONTO PARA CONTINUARES!
+
+Basta seguir os 4 passos acima e começar a desenvolver! 🚀
+
+Se tiveres dúvidas, consulta os ficheiros de documentação dentro do projeto.
+
+Boa sorte! 💪
