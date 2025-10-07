@@ -1,0 +1,66 @@
+🎵 MUSIC RIGHTS MANAGER - CONTINUAÇÃO DO PROJETO
+
+Olá! Preciso que continues o desenvolvimento deste projeto de onde parámos.
+
+📦 FICHEIRO ANEXO:
+- music-rights-manager-backup.tar.gz (207 MB) - Código completo do projeto
+
+🚀 INSTRUÇÕES RÁPIDAS:
+
+1. Extrai o backup:
+   tar -xzf music-rights-manager-backup.tar.gz
+   cd music-rights-manager
+
+2. Instala dependências:
+   npm install
+
+3. Inicia o servidor:
+   npm run dev
+
+4. Testa a aplicação:
+   - URL: http://localhost:3004
+   - Login: eduardo@test.com / password123
+
+✅ O QUE JÁ ESTÁ FEITO:
+- Sistema de autenticação completo
+- Perfis de artista com 18 campos + foto de perfil
+- Catálogo de músicas com colaboradores e percentagens
+- Sistema de amigos (pedidos, aceitar, rejeitar)
+- Gestão de equipa com permissões granulares
+- Concertos (CRUD completo)
+- Upload de fotos com compressão automática
+- Fotos integradas em: perfil, sidebar, amigos, equipa
+
+🎯 ÚLTIMA FUNCIONALIDADE:
+Sistema de fotos de perfil - COMPLETO e funcional!
+
+📊 TECNOLOGIAS:
+- Next.js 15 + TypeScript
+- PostgreSQL (music_rights_db)
+- shadcn/ui + Tailwind CSS
+- Porta: 3004
+
+📝 PRÓXIMOS PASSOS SUGERIDOS:
+1. Dashboard com estatísticas (total músicas, concertos, amigos)
+2. Sistema de apoios/financiamento funcional
+3. Relatórios de direitos autorais
+4. Integração com Spotify API
+
+💡 INFORMAÇÃO IMPORTANTE:
+- Dentro do projeto há 2 ficheiros de documentação detalhada:
+  * RESUMO_PROJETO.md (arquitetura completa, base de dados, etc)
+  * INSTRUCOES_CONTINUACAO.md (troubleshooting, queries úteis, etc)
+
+🔧 BASE DE DADOS:
+- Host: localhost:5432
+- Database: music_rights_db
+- User: postgres
+- Password: postgres
+- Já está incluída no backup com dados de teste
+
+👤 UTILIZADORES DE TESTE:
+- eduardo@test.com / password123 (artist)
+- beiro@test.com / password123 (manager)
+- simao@test.com / password123 (manager)
+
+Está tudo pronto para continuares! Basta extrair, instalar e começar a desenvolver. 🚀

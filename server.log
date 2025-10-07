@@ -1,0 +1,39 @@
+
+> music-rights-manager@0.1.0 dev
+> next dev --turbopack -p 3004
+
+   ▲ Next.js 15.5.3 (Turbopack)
+   - Local:        http://localhost:3004
+   - Network:      http://169.254.0.21:3004
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · serverActions
+
+ ✓ Starting...
+ ✓ Compiled middleware in 393ms
+ ✓ Ready in 2s
+ ○ Compiling /profile ...
+ ✓ Compiled /profile in 6.5s
+ GET /profile 200 in 7301ms
+ ⚠ Cross origin request detected from tired-houses-itch-2.lindy.site to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ○ Compiling /favicon.ico ...
+ GET /favicon.ico?favicon.bf3c9292.ico 200 in 923ms
+ ✓ Compiled /favicon.ico in 1356ms
+ GET /api/auth/session 200 in 1537ms
+ GET /api/team 200 in 1338ms
+ GET /api/profile 200 in 1451ms
+ ✓ Compiled /api/context/get-artist in 207ms
+ GET /api/context/get-artist 200 in 532ms
+ GET /profile 200 in 224ms
+ GET /favicon.ico?favicon.bf3c9292.ico 200 in 302ms
+ GET /api/auth/session 200 in 291ms
+ GET /api/profile 200 in 303ms
+ GET /api/team 200 in 294ms
+ GET /api/context/get-artist 200 in 272ms
+ GET /favicon.ico 200 in 424ms
+ GET /favicon.ico 200 in 281ms
+ GET /favicon.ico 200 in 336ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1501ms
+ GET /login 200 in 1849ms
